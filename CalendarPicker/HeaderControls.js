@@ -7,10 +7,13 @@ import {
 import PropTypes from 'prop-types';
 import { Utils } from './Utils';
 import Controls from './Controls';
+import moment from 'moment'
 
 function isSameMonthAndYear(date, month, year) {
   if (date) {
-    return date.month() === month && date.year() === year
+    let thisMonth = parseInt(moment(date).month())
+    let thisYear = parseInt(moment(date).year())
+    return thisMonth === month && thisYear === year
   }
   return false;
 }

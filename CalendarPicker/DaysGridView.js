@@ -54,13 +54,13 @@ export default function DaysGridView(props) {
   const firstWeekDay = firstDayOfMonth.isoWeekday();
 
   // fill up an array of days with the amount of days in the current month
-  const days = Array.apply(null, {length: totalDays}).map(Number.call, Number);
+  const days = Array.apply(null, { length: totalDays }).map(Number.call, Number);
 
   // 7 days in a week.
-  const dayArray = [ 0, 1, 2, 3, 4, 5, 6 ];
+  const dayArray = [0, 1, 2, 3, 4, 5, 6];
 
   // There can be 4 to 6 rows of weeks in a month.
-  const weekArray = [ 0, 1, 2, 3, 4, 5 ];
+  const weekArray = [0, 1, 2, 3, 4, 5];
 
   // Get the starting index, based upon whether we are using monday or sunday as first day.
   const startIndex = (startFromMonday ? firstWeekDay - 1 : firstWeekDay) % 7;
@@ -144,11 +144,11 @@ export default function DaysGridView(props) {
 
   return (
     <View style={styles.daysWrapper}>
-      { weekArray.map(weekIndexOfMonth => (
-          <View key={weekIndexOfMonth} style={styles.weekRow}>
-            { generateDatesForWeek(weekIndexOfMonth) }
-          </View>
-        ))
+      {weekArray.map(weekIndexOfMonth => (
+        <View key={weekIndexOfMonth} style={styles.weekRow}>
+          {generateDatesForWeek(weekIndexOfMonth)}
+        </View>
+      ))
       }
     </View>
   );
