@@ -31,7 +31,8 @@ export default function Day(props) {
     disabledDatesTextStyle,
     minRangeDuration,
     maxRangeDuration,
-    enableDateChange
+    enableDateChange,
+    customDateView
   } = props;
 
   const thisDay = moment({ year, month, day });
@@ -173,6 +174,9 @@ export default function Day(props) {
             {day}
           </Text>
         </TouchableOpacity>
+        <View style={{ width: '100%', height: 10 }}>
+          {customDateView ? customDateView(thisDay, props) : null}
+        </View>
       </View>
     );
   }
@@ -182,6 +186,10 @@ export default function Day(props) {
         <Text style={[textStyle, styles.disabledText, disabledDatesTextStyle]}>
           {day}
         </Text>
+        {/* <View style={{ height: 14 }} /> */}
+        <View style={{ width: '100%', top: 7, height: 10 }}>
+          {customDateView ? customDateView(thisDay, props) : null}
+        </View>
       </View>
     )
   }

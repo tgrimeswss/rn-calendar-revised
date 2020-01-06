@@ -17,6 +17,7 @@ export default function DaysGridView(props) {
   const {
     month,
     year,
+    customDateView,
     styles,
     onPressDay,
     startFromMonday,
@@ -73,6 +74,7 @@ export default function DaysGridView(props) {
             const day = days.shift() + 1;
             return (
               <Day
+                customDateView={customDateView}
                 key={day}
                 day={day}
                 month={month}
@@ -112,6 +114,7 @@ export default function DaysGridView(props) {
           const day = days.shift() + 1;
           return (
             <Day
+              customDateView={customDateView}
               key={day}
               day={day}
               month={month}

@@ -241,6 +241,7 @@ export default class CalendarPicker extends Component {
     } = this.state;
 
     const {
+      customDateView,
       allowRangeSelection,
       startFromMonday,
       initialDate,
@@ -346,6 +347,7 @@ export default class CalendarPicker extends Component {
             textStyle={textStyle}
           />
           <DaysGridView
+            customDateView={customDateView ? customDateView : null}
             enableDateChange={enableDateChange}
             month={currentMonth}
             year={currentYear}
