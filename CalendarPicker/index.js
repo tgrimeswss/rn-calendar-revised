@@ -317,62 +317,56 @@ export default class CalendarPicker extends Component {
         maxRangeDurationTime = maxRangeDuration;
       }
     }
-
     return (
-      <Swiper
-        onSwipe={direction => this.props.enableSwipe && this.onSwipe(direction)}
-        config={{ ..._swipeConfig, ...swipeConfig }}
-      >
-        <View style={styles.calendar}>
-          <HeaderControls
-            styles={styles}
-            currentMonth={currentMonth}
-            currentYear={currentYear}
-            initialDate={moment(initialDate)}
-            onPressPrevious={this.handleOnPressPrevious}
-            onPressNext={this.handleOnPressNext}
-            months={months}
-            previousTitle={previousTitle}
-            nextTitle={nextTitle}
-            textStyle={textStyle}
-            restrictMonthNavigation={restrictMonthNavigation}
-            maxDate={maxDate}
-            minDate={minDate}
-            headingLevel={headingLevel}
-          />
-          <Weekdays
-            styles={styles}
-            startFromMonday={startFromMonday}
-            weekdays={weekdays}
-            textStyle={textStyle}
-          />
-          <DaysGridView
-            customDateView={customDateView ? customDateView : null}
-            enableDateChange={enableDateChange}
-            month={currentMonth}
-            year={currentYear}
-            styles={styles}
-            onPressDay={this.handleOnPressDay}
-            disabledDates={_disabledDates}
-            disabledDatesTextStyle={disabledDatesTextStyle}
-            minRangeDuration={minRangeDurationTime}
-            maxRangeDuration={maxRangeDurationTime}
-            startFromMonday={startFromMonday}
-            allowRangeSelection={allowRangeSelection}
-            selectedStartDate={selectedStartDate && moment(selectedStartDate)}
-            selectedEndDate={selectedEndDate && moment(selectedEndDate)}
-            minDate={minDate && moment(minDate)}
-            maxDate={maxDate && moment(maxDate)}
-            textStyle={textStyle}
-            todayTextStyle={todayTextStyle}
-            selectedDayStyle={selectedDayStyle}
-            selectedRangeStartStyle={selectedRangeStartStyle}
-            selectedRangeStyle={selectedRangeStyle}
-            selectedRangeEndStyle={selectedRangeEndStyle}
-            customDatesStyles={customDatesStyles}
-          />
-        </View>
-      </Swiper>
+      <View style={{ marginTop: styles.calendar.marginTop, height: styles.calendar.height - 40 }}>
+        <HeaderControls
+          styles={styles}
+          currentMonth={currentMonth}
+          currentYear={currentYear}
+          initialDate={moment(initialDate)}
+          onPressPrevious={this.handleOnPressPrevious}
+          onPressNext={this.handleOnPressNext}
+          months={months}
+          previousTitle={previousTitle}
+          nextTitle={nextTitle}
+          textStyle={textStyle}
+          restrictMonthNavigation={restrictMonthNavigation}
+          maxDate={maxDate}
+          minDate={minDate}
+          headingLevel={headingLevel}
+        />
+        <Weekdays
+          styles={styles}
+          startFromMonday={startFromMonday}
+          weekdays={weekdays}
+          textStyle={textStyle}
+        />
+        <DaysGridView
+          customDateView={customDateView ? customDateView : null}
+          enableDateChange={enableDateChange}
+          month={currentMonth}
+          year={currentYear}
+          styles={styles}
+          onPressDay={this.handleOnPressDay}
+          disabledDates={_disabledDates}
+          disabledDatesTextStyle={disabledDatesTextStyle}
+          minRangeDuration={minRangeDurationTime}
+          maxRangeDuration={maxRangeDurationTime}
+          startFromMonday={startFromMonday}
+          allowRangeSelection={allowRangeSelection}
+          selectedStartDate={selectedStartDate && moment(selectedStartDate)}
+          selectedEndDate={selectedEndDate && moment(selectedEndDate)}
+          minDate={minDate && moment(minDate)}
+          maxDate={maxDate && moment(maxDate)}
+          textStyle={textStyle}
+          todayTextStyle={todayTextStyle}
+          selectedDayStyle={selectedDayStyle}
+          selectedRangeStartStyle={selectedRangeStartStyle}
+          selectedRangeStyle={selectedRangeStyle}
+          selectedRangeEndStyle={selectedRangeEndStyle}
+          customDatesStyles={customDatesStyles}
+        />
+      </View>
     );
   }
 }
