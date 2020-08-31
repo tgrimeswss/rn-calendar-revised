@@ -318,7 +318,7 @@ export default class CalendarPicker extends Component {
       }
     }
     return (
-      <View style={{ marginTop: styles.calendar.marginTop, height: styles.calendar.height - 40 }}>
+      <View style={{ marginTop: styles.calendar.marginTop }}>
         <HeaderControls
           styles={styles}
           currentMonth={currentMonth}
